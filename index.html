@@ -8,17 +8,72 @@
         @import url('https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap');
         body {
             font-family: "Momo Signature", cursive;
+            background-color: oklch(88.5% 0.062 18.334);
         }
 
         .heading {
             text-align: center;
         }
 
+        .todos-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } 
+
+        .input-block {
+            height: 45px;
+            font-family: "Momo Signature", cursive;
+            background-color: transparent;
+            border: none;
+        }
+
+        input:focus {
+            background-color: #f8c6c6;  
+            outline: none;              
+            box-shadow: 0 0 0 3px #000 inset; 
+        }
+
+        ::placeholder {
+            color: black;
+            opacity: 1;
+            font-size: 16px;
+        }
+
+
+        .input-block, .todo-block {
+            border: 1px solid black;
+            width: 350px;
+            margin-bottom: 8px;
+            padding: 6px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
     </style>
+    <script src="https://kit.fontawesome.com/387613ae61.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="heading">
         <h1>Todo List</h1>
     </div>
+    <div class="todos-container">
+        <input class="input-block" placeholder="Enter todo..." name="add todo"/>
+        <div class="todo-block" id="1">
+            <p>Default Todo 1</p>
+            <div>
+                <i class="fa-solid fa-trash fa-black fa-2x"></i>
+            </div>
+        </div>
+        <div class="todo-block" id="2">
+            <p>Default Todo 2</p>
+            <div>
+                <i class="fa-solid fa-trash fa-black fa-2x"></i>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
